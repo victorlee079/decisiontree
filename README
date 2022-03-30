@@ -1,0 +1,28 @@
+Basic usage:
+To build the tree using default setting and provided training/testing set
+java -jar dectree.jar
+
+Available Configurations
+1. -t
+To set the training set file path
+Default: "./data/train/adult.data"
+Example usage:
+java -jar dectree.jar -t "./data/train/adult.data"
+2. -e
+To set the evaluation set file path
+Default: "./data/test/adult.test"
+Example usage:
+java -jar dectree.jar -e "./data/test/adult.test"
+3. -n
+To set threshold (i.e. number of records) to stop further splitting
+Default: 400
+Example usage:
+To set threshold to 500
+java -jar dectree.jar -n 500
+4. -m
+To use a pre-built model
+If set, it will not build the model from the training set. The program will look for the pre-built model from folder "./build".
+The model to be loaded depends on the threshold, e.g. "dt750.bin" refers to the model built with threshold 750.
+Example usage: 
+To use dt500.bin as the pre-built model
+java -jar dectree.jar -m -n 500
